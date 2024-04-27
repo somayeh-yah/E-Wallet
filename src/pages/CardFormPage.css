@@ -1,49 +1,73 @@
-.form-page {
-  width: 414px;
-  height: auto;
-  background: #dad7cd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 50px;
+
+@media only screen and (max-width: 600px) {
+  .form-page {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form-page h1 {
+    font-size: 36px;
+  }
+
+  .form-page .input,
+  .form-page select {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-page .btn-addcard {
+    font-size: 16px;
+    padding: 12px 24px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
 }
 
-.form-page h1 {
-  text-align: center;
-  font-size: 55px;
-  margin-bottom: 30px;
-}
 
-.form-page .input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
+@media only screen and (min-width: 601px) {
+  .form-page {
+    width: 414px;
+    padding: 50px;
+  }
 
-.form-page select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
+  .form-page h1 {
+    font-size: 55px;
+  }
 
-.form-page .btn-addcard {
-  border: none;
-  background-color: cadetblue;
-  font-size: 20px;
-  padding: 15px 32px;
-  border-radius: 8px;
-  transition-duration: 0.4s;
-  width: 100%;
-  margin-top: 3rem;
-  cursor: pointer;
-}
+  .form-page .input,
+  .form-page select {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
-.form-page .btn-addcard:hover {
-  background-color: #0a0a0a;
+  .form-page .btn-addcard {
+    font-size: 20px;
+    padding: 15px 32px;
+    margin-top: 3rem;
+    width: 100%;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .form-page .btn-addcard:hover{
+    background-color:rgb(101, 117, 117) ;
+  }
 }

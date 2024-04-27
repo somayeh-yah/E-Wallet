@@ -1,38 +1,74 @@
 .home-page {
-    position: relative;
-    width: 414px;
-    height: auto;
-    background: #dad7cd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-  }
-  
-  .home-page h1 {
-    text-align: center;
-    font-size: 55px;
-    margin-bottom: 30px;
-  }
-  
-  .home-page .homepage-buttons {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .home-page .btn {
-    border: none;
-    padding: 15px 32px;
-    font-size: 16px;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    width: 100%;
-    cursor: pointer;
-    margin-bottom: 10px;
-    color: #fbfafa;
-    background-color: cadetblue;
-    font-size: 20px;
-  }
-  
-  .home-page .btn:hover {
-    background-color: #0a0a0a;
-  }
+  position: relative;
+  width: 414px;
+  height: auto;
+  background: #dad7cd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+}
+
+.home-page h1 {
+  text-align: center;
+  font-size: 55px;
+  margin-bottom: 30px;
+}
+
+.home-page .homepage-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-page .btn {
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: #fbfafa;
+  background-color: cadetblue;
+  font-size: 20px;
+}
+
+.home-page .btn:hover {
+  background-color: #0a0a0a;
+}
+
+.card {
+  margin-bottom: 20px;
+  border-radius: 10px; 
+  overflow: hidden; 
+}
+
+.card-header {
+  padding: 10px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+
+.delete-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.6s;
+  margin-bottom: 3rem;
+  font-size: 20px;
+}
+
+.delete-button:hover {
+  background-color: rgb(11, 12, 12);
+  color:#ffffff
+}
+p{
+  color: white;
+}

@@ -1,34 +1,36 @@
-import React from "react";
-import "./Card.css";
-
+import {getVendorLogo} from "../../reducers/cardReducers"
 function Card(props) {
-  const { card, color} = props;
+  const { onDelete,card, backgroundColor, onClick} = props;
+   const vendorLogo = getVendorLogo(card.vendor);
+  
 
-  const handleDelete = () => {
-    dispatch(deleteCard(card.cardNumber)); 
-  };  
   return (
-    <article className="card" style={{ backgroundColor: color }}>
+    <>
+    <article
+      className="card"
+      style={{ backgroundColor: backgroundColor}}
+      onClick={() => onClick(card)} 
+    >
       <div className="card-header">
-        <img
-          src="src/assets/image/chip-dark.svg"
-          alt="Chip Logo"
-          className="chip-logo"
-        />
-        <img
-          src="src/assets/image/vendor-bitcoin.svg"
-          alt="Bitcoin Logo"
-          className="bitcoin-logo"
-        />
+       
+        {vendorLogo && (
+          <img
+            src={`src/assets/image/${vendorLogo}`}
+            alt={`${card.vendor} Logo`}
+            className="vendor-logo"
+          />
+        )}
       </div>
       <div className="card-body">
         <p>XXX XXX XXX XXX: {card.cardNumber}</p>
         <p>FIRSTNAME LASTNAME: {card.name}</p>
         <p>Valid: {card.date}</p>
         <p>cvv: {card.cvv}</p>
-        <button onClick={handleDelete}>Delete Card</button>
       </div>
-    </article>
+     </article>
+     <button style={{marginBottom:"20px"}} onClick={() => onDelete(card)}>delete</button>
+      
+      </>
   );
 }
 

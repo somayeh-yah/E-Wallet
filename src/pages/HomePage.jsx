@@ -1,6 +1,7 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteCard} from "../reducers/cardReducers";
+
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCard, setActiveCard, getVendorLogo } from "../reducers/cardReducers";
 import Card from "../components/Card/Card";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
@@ -8,28 +9,45 @@ import "./HomePage.css";
 function HomePage() {
   const dispatch = useDispatch();
   const cards = useSelector((state) => state.card.cards);
-  
-  function handleDeleteButton(cardNumber){
-    dispatch(deleteCard(cardNumber));
-  }
- 
+  const activeCard = useSelector((state) => state.card.activeCard);
 
-  const cardsComponent = cards.map((card, id) => {
-    return (
-      <Card
-        key={id}
-        card={card}
-        color={card.color}
-        onDelete={() => handleDelete(card.cardNumber)}
-        
-      />
-    );
-  });
+  function handleCardClick(card) {
+    dispatch(setActiveCard(card));
+    console.log("Active card selected:", card);
+  }
 
   return (
     <main className="home-page" style={{ backgroundColor: "#dad7cd" }}>
       <h1>E-WALLET</h1>
-      {cardsComponent}
+      <section className="active-card-section">
+        {activeCard && (
+          <Card
+          
+           
+            card={activeCard}
+            backgroundColor={activeCard.backgroundColor}
+            venderLogo = {activeCard.getVendorLogo}
+            onDelete ={deleteCard.cardNumberToDelete}
+            onClick={() => dispatch(setActiveCard(null))}
+          />
+
+         
+        )}
+       
+      </section>
+      <section className="cards-section">
+  
+        {cards
+          .filter((card) => card !== activeCard)
+          .map((card, id) => (
+            <Card
+              key={id}
+              card={card}
+              backgroundColor={card.backgroundColor}
+              onClick={() => handleCardClick(card)}
+            />
+          ))}
+      </section>
       <div className="homepage-buttons">
         <button className="btn">
           <Link
@@ -39,11 +57,16 @@ function HomePage() {
             Add A NEW CARD
           </Link>
         </button>
-
-        <button onClick={() => handleDeleteButton(cards[0]?.cardNumber)} className="btn">Delete</button>
       </div>
     </main>
   );
 }
 
 export default HomePage;
+
+
+
+
+
+
+

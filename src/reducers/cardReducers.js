@@ -1,28 +1,40 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 
-export const getVendorAndColor = (vendor) => {
+export const getVendorLogo = (vendor) => {
   switch (vendor) {
-    case "KALASCARD":
-      return "#9f86c0";
-    case "VASACARD":
-      return "#ffd6ff";
-    case "MINISTERCARD":
-      return "#1e6091";
-    case "HAWAIICARD":
-      return "#f4acb7";
-    case "MADAGASKARCARD":
-      return "#f15bb5";
+    case "Bitcoin Inc":
+      return "vendor-bitcoin.svg" ;
+    case "Ninja Bank":
+      return "vendor-ninja.svg";
+    case "Blockchain Inc":
+      return "vendor-blockchain.svg";
+    case "Evil Corp":
+      return "vendor-evil.svg";
     default:
-      return "rgba(255, 174, 52, 1)";
+      return "chip-dark.svg"; 
+  }
+};
+
+
+export const getVendorColor = (vendor) => {
+  switch (vendor) {
+    case "Bitcoin Inc":
+      return "#FFAE34";
+    case "Ninja Bank":
+      return "#222222";
+    case "Blockchain Inc":
+      return "#8B58F9";
+    case "Evil Corp":
+      return "#F33355";
+    default:
+      return "lightgrey"; 
   }
 };
 
 const initialState = {
   cards: [],
-  selectedVendor: "",
-  color: {
-    code: "#d90368",
-  },
+  activeCard: null,
 };
 
 const cardSlice = createSlice({
@@ -32,22 +44,19 @@ const cardSlice = createSlice({
     addCard(state, action) {
       state.cards.push(action.payload);
     },
-
-    changeColor(state, action) {
-      state.color.code = getVendorColor(action.payload);
-      state.cards.forEach((card) => {
-        card.backgroundColor = state.color.code;
-      });
-    },
-
     deleteCard(state, action) {
+      console.log(state , "this is my state");
+      console.log(action, "this is my action");
       const cardNumberToDelete = action.payload;
       state.cards = state.cards.filter(
-        (card) => card.cardNumber !== cardNumberToDelete
+        (card) => card.id !== cardNumberToDelete
       );
+    },
+    setActiveCard(state, action) {
+      state.activeCard = action.payload;
     },
   },
 });
 
-export const { addCard, deleteCard, changeColor } = cardSlice.actions;
+export const { addCard, deleteCard, setActiveCard} = cardSlice.actions;
 export default cardSlice.reducer;
