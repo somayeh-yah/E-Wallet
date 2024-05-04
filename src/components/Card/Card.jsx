@@ -6,7 +6,7 @@ function Card(props) {
 
   return (
     <>
-    <article
+    <article 
       className="card"
       style={{ backgroundColor: backgroundColor}}
       onClick={() => onClick(card)} 

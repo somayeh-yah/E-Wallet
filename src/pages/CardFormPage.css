@@ -3,6 +3,8 @@
   .form-page {
     width: 100%;
     padding: 20px;
+    border: 1px solid;
+    background-color: #949ee5;
   }
 
   .form-page h1 {
@@ -38,10 +40,13 @@
   .form-page {
     width: 414px;
     padding: 50px;
+    background-color: #949ee5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .form-page h1 {
     font-size: 55px;
+    text-align: center;
   }
 
   .form-page .input,
@@ -60,7 +65,7 @@
     padding: 15px 32px;
     margin-top: 3rem;
     width: 100%;
-    background-color: cadetblue;
+    background-color: #b289d1;
     border: none;
     border-radius: 8px;
     transition-duration: 0.4s;
@@ -68,6 +73,32 @@
   }
 
   .form-page .btn-addcard:hover{
-    background-color:rgb(101, 117, 117) ;
+    background-color:#cb72b0 ;
   }
+
+  .active-card-container{
+    padding-bottom: 11rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+    border-radius: 10px; 
+    overflow: hidden; 
+    height: 250px;
+    perspective: 1000px;
+    transition: transform 0.6s;
+
+    .flipped{
+      transform: rotateY(180deg);
+    }
+  }
+  
+  &.card-header {
+    padding: 10px;
+  }
+  
+  &.card-body {
+    padding: 10px;
+  }
+ 
 }

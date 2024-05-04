@@ -2,7 +2,7 @@
   position: relative;
   width: 414px;
   height: auto;
-  background: #dad7cd;
+  background-color: #949ee5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 50px;
 }
@@ -29,27 +29,15 @@
   cursor: pointer;
   margin-bottom: 10px;
   color: #fbfafa;
-  background-color: cadetblue;
+  background-color: #b289d1;
   font-size: 20px;
 }
 
 .home-page .btn:hover {
-  background-color: #0a0a0a;
+  background-color:#cb72b0 ;
 }
 
-.card {
-  margin-bottom: 20px;
-  border-radius: 10px; 
-  overflow: hidden; 
-}
 
-.card-header {
-  padding: 10px;
-}
-
-.card-body {
-  padding: 10px;
-}
 
 
 .delete-button {

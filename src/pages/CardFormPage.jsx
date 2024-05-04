@@ -44,6 +44,8 @@ function CardFormPage() {
       
      
       <article className="card" style={{ backgroundColor: formInput.backgroundColor }}>
+        <div className="cardInner">
+          <div className="card-front">
         <div className="card-header">
           
           <img
@@ -56,8 +58,14 @@ function CardFormPage() {
           <p>{formInput.cardNumber}</p>
           <p>FIRSTNAME LASTNAME: {formInput.name}</p>
           <p>Valid: {formInput.date}</p>
+
+        </div>
+
+        </div>
+        <div className="card-back">
           <p>cvv: {formInput.cvv}</p>
         </div>
+       </div>
       </article>
 
       <form onSubmit={handleAddSubmit}>

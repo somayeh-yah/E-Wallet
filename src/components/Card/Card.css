@@ -1,4 +1,4 @@
-/*   
+   
   .cardContainer {
     width: 414px;
   
@@ -7,11 +7,6 @@
   
     margin: 60px;
     border-radius: 15px;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 55px;
   }
   
   .card {
@@ -23,36 +18,6 @@
     padding: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-}
+} 
   
-  .card:hover {
-    background-color: rgb(73, 146, 123);
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .chip-logo {
-    width: 30px;
-    height: auto;
-    margin-left: 20px;
-  }
-  
-  .bitcoin-logo {
-    width: 30px;
-    height: auto;
-    justify-content: right;
-  }
-  
-  .card-body {
-    grid-template-columns: repeat(1fr, auto);
-    margin-top: 20px;
-  }
-  
-
-
-  
-  
- */
+ 

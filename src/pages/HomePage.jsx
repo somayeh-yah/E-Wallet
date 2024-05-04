@@ -1,7 +1,5 @@
-
-import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCard, setActiveCard, getVendorLogo } from "../reducers/cardReducers";
+import { deleteCard, setActiveCard } from "../reducers/cardReducers";
 import Card from "../components/Card/Card";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
@@ -17,26 +15,20 @@ function HomePage() {
   }
 
   return (
-    <main className="home-page" style={{ backgroundColor: "#dad7cd" }}>
+    <main className="home-page">
       <h1>E-WALLET</h1>
-      <section className="active-card-section">
+      <section className="active-card-container">
         {activeCard && (
           <Card
-          
-           
             card={activeCard}
             backgroundColor={activeCard.backgroundColor}
-            venderLogo = {activeCard.getVendorLogo}
-            onDelete ={deleteCard.cardNumberToDelete}
-            onClick={() => dispatch(setActiveCard(null))}
+            venderLogo={activeCard.getVendorLogo}
+            onDelete={deleteCard.cardNumberToDelete}
+            onClick={() => dispatch(setActiveCard(activeCard))}
           />
-
-         
         )}
-       
       </section>
       <section className="cards-section">
-  
         {cards
           .filter((card) => card !== activeCard)
           .map((card, id) => (
@@ -63,10 +55,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-
-
-
-
-
-
